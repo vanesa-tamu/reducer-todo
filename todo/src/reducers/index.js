@@ -13,14 +13,14 @@ export function reducer(state, action) {
             return [
                 ...state,
                 {
-                    todo: action.payload, //name of todo
+                    todo: action.payload, // action.payload is the name of todo
                     id: Date.now(),
                     completed: false
                 }
             ]
         case 'TOGGLE_TODO':
             return state.map(todo => {
-                if(todo.id === action.payload){
+                if(todo.id === action.payload){ // action.payload is the id of the todo
                   return { 
                     ...todo,
                     completed: !todo.completed
